@@ -1,0 +1,21 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    - selector: note.NoteV1.Create
+      post: /v1/note
+      body: "*"
+
+    - selector: note.NoteV1.Get
+      get: /v1/note/{id}
+
+    - selector: note.NoteV1.Update
+      patch: /v1/note/{id}
+      body: "*"
+
+    - selector: note.NoteV1.List
+      get: /v1/note/list
+
+    - selector: note.NoteV1.Delete
+      delete: /v1/note/{id}
